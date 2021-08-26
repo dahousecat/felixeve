@@ -1,0 +1,28 @@
+.testimonials {
+  background-color: $colour__rhino;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+.testimonials__title {
+  color: lighten($colour__bali_hai, 20%);
+}
+
+.testimonials__item {
+  background-color: darken(white, 1%);
+  padding: clamp(2rem, 6vw, 4rem) clamp(2rem, 6vw, 6rem);
+  margin-bottom: 4rem;
+  border-radius: 1rem;
+}
+
+figure,
+blockquote {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 4rem;
+  font-style: italic;
+  text-align: right;
+}

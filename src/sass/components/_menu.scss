@@ -1,0 +1,84 @@
+.menu {
+  .js & {
+
+    @include mq($until: l) {
+      transform: translateX(100%);
+      position: fixed;
+      display: flex;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 32rem;
+      flex-direction: column;
+      background-color: $colour__blue_dianne;
+      z-index: 10;
+      padding: clamp(10rem, 23vw, 15rem) 2rem 0 2rem;
+    }
+
+    @include mq($from: l) {
+      display: flex;
+    }
+  }
+
+  @include mq($from: l) {
+    display: flex;
+    margin-top: 2rem;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+.js .menu--animate {
+  @include mq($until: l) {
+    transition: all 400ms;
+  }
+}
+
+.js .menu--open {
+  @include mq($until: l) {
+    transform: translateX(0%);
+  }
+}
+
+.nav__button {
+  display: none;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  z-index: 11;
+  position: relative;
+  width: clamp(4.2rem, 11vw, 7rem);
+  fill: white;
+
+  .js & {
+    display: block;
+
+    @include mq($from: l) {
+      display: none;
+    }
+  }
+
+  @include mq($from: l) {
+    display: none;
+  }
+}
+
+.menu__link {
+  background-color: $colour__blue_dianne;
+  color: white;
+  border-radius: 0.8rem;
+  display: block;
+  padding: clamp(.6rem, 1.2vw, 1rem) clamp(1.4rem, 3vw, 3rem);
+  font-size: clamp(1.8rem, 3vw, 2rem);
+  transition: background-color 200ms;
+
+  //@include mq($from: s) {
+  //  margin-left: 1rem;
+  //  text-align: left;
+  //}
+
+  &:hover {
+    background-color: lighten($colour__blue_dianne, 10%);
+    color: white;
+  }
+}

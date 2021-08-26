@@ -1,0 +1,9 @@
+.container {
+  max-width: 128rem;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 4vw, 4rem);
+}
+
+.container--wide {
+  max-width: 186rem;
+}

@@ -1,0 +1,121 @@
+.hello {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darken(white, 5%);
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+
+  @include mq($from: m) {
+    margin-top: 0;
+    height: 100vh;
+    min-height: 46rem;
+    padding-bottom: 0;
+  }
+}
+
+.hello__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5vw;
+  max-width: 108rem;
+  grid-row-gap: 4rem;
+
+  @include mq($from: m) {
+    margin-bottom: 8rem;
+  }
+}
+
+.hello__col1 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.8rem;
+
+  @include mq($from: m) {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+  }
+}
+
+.hello__col2 {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mq($from: m) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    padding: 0;
+  }
+}
+
+.hello__image_wrap {
+  background-color: darken(white, 15%);
+  border-radius: 1rem;
+  display: inline-block;
+  height: clamp(20.7rem, 37.3vw, 28.9rem);
+  width: clamp(15rem, 27vw, 21rem);
+
+  animation-name: moveback;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+$move: 1vw;
+$max_move: 1rem;
+$min_move: .6rem;
+
+@keyframes moveback {
+  0% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(clamp(#{$min_move}, #{$move}, #{$max_move}), clamp(#{$min_move}, #{$move}, #{$max_move}));
+  }
+}
+
+.hello__image {
+  border-radius: 1rem;
+  animation-name: move;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+
+}
+
+@keyframes move {
+  0% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(clamp(-#{$max_move}, -#{$move}, -#{$min_move}), clamp(-#{$max_move}, -#{$move}, -#{$min_move}));
+  }
+}
+
+.hello_t1 {
+  font-size: clamp(4rem, 8vw, 5rem);
+  font-weight: bold;
+  margin: 0;
+}
+
+.hello_t2 {
+  font-size: clamp(2.4rem, 4vw, 2.6rem);
+  margin: 0.8rem 0 1.4rem 0;
+}
+
+
+

@@ -1,0 +1,41 @@
+.footer {
+  padding: 4rem clamp(2rem, 2vw, 4rem);
+  text-align: center;
+  color: darken($colour__bali_hai, 15%);
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__left {
+  width: clamp(0rem, 2vw, 5rem);
+}
+
+.footer__right {
+  width: 5rem;
+}
+
+.footer__top {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms;
+  fill: rgba(0, 0, 0, .5);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .2);
+    fill: rgba(0, 0, 0, .8);
+  }
+}
+
+.linkedin {
+  height: 1.8rem;
+  position: relative;
+  top: .3rem;
+  margin-left: .4rem;
+}

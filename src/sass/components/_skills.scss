@@ -1,0 +1,67 @@
+.skills {
+  margin-top: 4rem;
+
+  @include mq($from: m) {
+    transform: translateY(-50%);
+    margin-top: 0;
+  }
+}
+
+.skills__inner {
+  background-color: $colour__blue_dianne;
+  border-radius: 1rem;
+  padding: 2rem;
+  color: white;
+
+  @include mq($from: s) {
+    padding: 2rem 3rem;
+  }
+
+  @include mq($from: m) {
+    padding: 3rem 1rem;
+  }
+}
+
+.skills__title {
+  @include mq($from: m) {
+    @include sr-only;
+  }
+}
+
+.skills__list {
+  display: grid;
+  text-align: center;
+
+  @include mq($from: m) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.skills__item {
+  border-bottom: .1rem solid rgba(255, 255, 255, .5);
+  padding: 2rem 1rem;
+
+  @include mq($from: m) {
+    padding: 0 1rem;
+    border-bottom: none;
+    border-right: .1rem solid rgba(255, 255, 255, .5);
+  }
+
+  @include mq($from: l) {
+    padding: 0 2rem;
+  }
+
+  &:last-child {
+    border-right: none;
+    border-bottom: none;
+  }
+}
+
+.skills_icon {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  top: 0.8rem;
+  margin-right: 0.4rem;
+  fill: lighten($colour__blue_dianne, 10%);
+}

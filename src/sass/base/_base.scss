@@ -1,0 +1,75 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 32rem;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+
+  &.lock {
+    position: fixed;
+  }
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  text-decoration: none;
+  color: $colour__java;
+  transition: color 200ms;
+
+  &:hover {
+    color: lighten($colour__java, 10%);
+  }
+}
+
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &.list {
+    list-style-type: circle;
+    padding: .6rem 0 0 2.4rem;
+
+    li {
+      margin-bottom: .6rem;
+    }
+  }
+}
+
+.sr-only:not(:focus):not(:active) {
+  @include sr-only;
+}

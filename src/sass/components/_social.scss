@@ -1,0 +1,51 @@
+.social {
+  display: flex;
+  margin-top: 2rem;
+}
+
+.social__link {
+  margin-right: 2rem;
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  padding: .6rem;
+  box-sizing: content-box;
+  border-radius: .6rem;
+  transition: background-color 200ms;
+
+  &:hover {
+    background: rgb(220, 220, 220);
+  }
+}
+
+.social__path {
+  fill: rgb(170, 170, 170);
+}
+
+.social__link:hover .social__path--linkedin {
+  fill: rgb(10, 102, 194);
+}
+
+.social__link:hover .social__path--drupal {
+  fill: #009cde;
+}
+
+.social__link:hover .social__path--stackoverflow-outer {
+  fill: #bbb;
+}
+
+.social__link:hover .social__path--stackoverflow-inner {
+  fill: #f58025;
+}
+
+.social__path--github-inner {
+  fill: rgba(0, 0, 0, 0);
+
+  .social__link:hover & {
+    fill: rgba(0, 0, 0, .6);
+  }
+}
+
+.social__link:hover .social__path--github-outer {
+  fill: rgb(200, 200, 200);
+}
