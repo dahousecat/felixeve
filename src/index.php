@@ -93,7 +93,7 @@
 
             <ul class="social">
                 <li class="social__item social__item--linkedin">
-                    <a class="social__link" href="http://www.linkedin.com/in/felix-eve" target="_blank" rel="noreferrer">
+                    <a class="social__link" href="https://www.linkedin.com/in/felix-eve" target="_blank" rel="noreferrer">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 26 26">
                             <title>LinkedIn</title>
                             <path class="social__path social__path--linkedin" d="M6.2 4c0 1.2-1 2.2-2.2 2.2-1.2 0-2.2-1-2.2-2.2C1.8 2.8 2.8 2 4 2c1.2 0 2.2 1 2.2 2.1zm0 4H1.8v13.8h4.4zm7 0H8.7v13.8H13v-7.3c0-4 5.2-4.3 5.2 0v7.3h4.3V13c0-6.9-7.8-6.5-9.5-3.2z"/>

@@ -2,11 +2,11 @@
 
 const gulp         = require('gulp')
 const sass         = require('gulp-sass')
+sass.compiler      = require('sass');
 const sourcemaps   = require('gulp-sourcemaps')
 const autoprefixer = require('autoprefixer')
 const postcss      = require('gulp-postcss')
 const { series }   = require('gulp');
-sass.compiler      = require('sass');
 const cleanCSS     = require('gulp-clean-css');
 const htmlmin      = require('gulp-htmlmin');
 const exec         = require('gulp-exec');
@@ -64,6 +64,7 @@ function moveFiles(cb) {
   gulp.src('./src/cv/index.html').pipe(gulp.dest('./www/cv'));
   gulp.src('./src/sw.js').pipe(gulp.dest('./www'));
   gulp.src('./src/manifest.json').pipe(gulp.dest('./www'));
+  gulp.src('./src/fonts/*').pipe(gulp.dest('./www/fonts'));
   cb();
 }
 

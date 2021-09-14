@@ -1,6 +1,12 @@
 <?php
 
-function portfolio_items() {
+/**
+ * Build array of portfolio items.
+ *
+ * @return array[]
+ *   The portfolio items.
+ */
+function portfolio_items(): array {
   $items = [
     [
       'title'       => 'Swarco E.Connect',
@@ -17,7 +23,11 @@ EOT,
       'image'       => 'econnect',
       'image2'      => 'econnect2',
       'link'        => 'https://account.swarcoeconnect.org/',
-      'tags'        => ['Drupal 8', ['ELK', 'Elastic search and Kibana'], ['APIs', 'Many many APIs!']],
+      'tags'        => [
+        'Drupal 8',
+        ['ELK', 'Elastic search and Kibana'],
+        ['APIs', 'Many many APIs!'],
+      ],
     ],
     [
       'title'       => 'Zoos Victoria',
@@ -80,10 +90,16 @@ EOT,
   ];
 
   foreach ($items as &$item) {
-    list($width, $height) = getimagesize('www/src/img/portfolio/smaller/' . $item['image'] . '.jpg');
+    [
+      $width,
+      $height,
+    ] = getimagesize('www/src/img/portfolio/smaller/' . $item['image'] . '.jpg');
     $item['image_w'] = $width;
     $item['image_h'] = $height;
-    list($width, $height) = getimagesize('www/src/img/portfolio/smaller/' . $item['image2'] . '.jpg');
+    [
+      $width,
+      $height,
+    ] = getimagesize('www/src/img/portfolio/smaller/' . $item['image2'] . '.jpg');
     $item['image2_w'] = $width;
     $item['image2_h'] = $height;
   }
@@ -91,8 +107,16 @@ EOT,
   return $items;
 }
 
-function image_height(string $path) {
-  list($width, $height) = getimagesize($path);
-  return $height;
+/**
+ * Calculate image height.
+ *
+ * @param string $path
+ *   The image path.
+ *
+ * @return int|null
+ *   The image height or null on failure.
+ */
+function image_height(string $path): ?int {
+  [$width, $height] = getimagesize($path);
+  return $height ?? NULL;
 }
-
