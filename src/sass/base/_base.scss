@@ -20,7 +20,9 @@ body {
   overflow-x: hidden;
 
   &.lock {
-    position: fixed;
+    @include mq($until: l) {
+      position: fixed;
+    }
   }
 }
 
@@ -46,6 +48,14 @@ a {
 
   &:hover {
     color: lighten($colour__java, 10%);
+  }
+
+  &.link__dark {
+    color: darken($colour__java, 15%);
+
+    &:hover {
+      color: darken($colour__java, 5%);
+    }
   }
 }
 

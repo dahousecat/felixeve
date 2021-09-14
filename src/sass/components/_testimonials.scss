@@ -16,6 +16,15 @@
   border-radius: 1rem;
 }
 
+.testimonials__link {
+  color: $colour__blue_dianne;
+  transition: color 200ms;
+
+  &:hover {
+    color: lighten($colour__blue_dianne, 20%);
+  }
+}
+
 figure,
 blockquote {
   margin: 0;

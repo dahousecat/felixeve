@@ -31,6 +31,30 @@ body {
   margin: 0 0;
 }
 
+.header {
+  @include mq($until: m) {
+    min-height: initial;
+  }
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  @include mq($from: m) {
+    width: auto;
+  }
+}
+
+.header__title {
+  display: none;
+
+  @include mq($from: m) {
+    display: block;
+  }
+}
+
 a {
   text-decoration: none;
   color: black;

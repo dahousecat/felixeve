@@ -6,3 +6,4 @@ http://www.pascalvangemert.nl/#/experiences
 
 https://shapeshifter.design/
 https://codepen.io/noahblon/post/an-intro-to-svg-animation-with-smil
+https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fwww.felixeve.co.uk%2F
