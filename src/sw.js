@@ -1,12 +1,12 @@
-const version = '1.0.3';
+const version = '1.0.4';
 const cacheName = 'felix_eve';
 const filesToCache = [
     '/',
     '/index.html',
     '/cv/index.html',
     '/img/felix/felix-420.jpg',
-    '/src/img/icons/favicon.ico',
-    '/src/js/script.js'
+    '/img/icons/favicon.ico',
+    '/js/script.js'
 ];
 
 /* Start the service worker and cache all of the app's content */

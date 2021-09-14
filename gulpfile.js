@@ -36,7 +36,7 @@ function prodCss(cb) {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer('last 2 versions')]))
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(gulp.dest('./www/src/css'));
+    .pipe(gulp.dest('./www/css'));
   cb();
 }
 
@@ -44,7 +44,7 @@ function js(cb) {
   gulp.src('./src/js/script.js')
       // .pipe(babel())
       .pipe(uglify())
-      .pipe(gulp.dest('./www/src/js'))
+      .pipe(gulp.dest('./www/js'))
   cb();
 }
 
@@ -61,7 +61,8 @@ function buildHtml(cb) {
  * Move files into www.
  */
 function moveFiles(cb) {
-  gulp.src('./src/cv/index.html').pipe(gulp.dest('./www/cv'));
+  gulp.src('./src/cv.html').pipe(gulp.dest('./www'));
+  gulp.src('./src/.htaccess').pipe(gulp.dest('./www'));
   gulp.src('./src/sw.js').pipe(gulp.dest('./www'));
   gulp.src('./src/manifest.json').pipe(gulp.dest('./www'));
   gulp.src('./src/fonts/*').pipe(gulp.dest('./www/fonts'));
