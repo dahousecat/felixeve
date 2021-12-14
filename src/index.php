@@ -202,7 +202,8 @@
                 </h4>
                 <p>
                     I've used Behat extensively including writing custom
-                    extensions, and am also confident writing Unit tests.
+                    extensions, and am also confident writing Functional &
+                    Unit tests.
                 </p>
             </li>
         </ul>
@@ -308,7 +309,18 @@
         <ul class="testimonials__list">
             <li class="testimonials__item">
                 <figure>
-                    <blockquote cite="https://www.linkedin.com/in/felix-eve/#ember81">
+                    <blockquote cite="https://www.linkedin.com/in/felix-eve">
+                        <p>Felix is a professional and dedicated developer as well as being a great communicator. From day one at Dennis he hit the ground running, understood the platform and delivered everything that was asked of him.</p>
+                        <p>The quality of his code was excellent and he often went beyond what was asked of him by suggesting improvements and refactors which really pushed the platform forward.</p>
+                    </blockquote>
+                    <figcaption>
+                        <a class="testimonials__link" target="_blank" href="https://www.linkedin.com/in/tashaharrison" rel="noreferrer">Tasha Harrison</a> - Software Engineer at Dennis Publishing, October 2021
+                    </figcaption>
+                </figure>
+            </li>
+            <li class="testimonials__item">
+                <figure>
+                    <blockquote cite="https://www.linkedin.com/in/felix-eve">
                         <p>During my time at Versantus I had the pleasure of working with Felix. I cannot recommend Felix enough!</p>
                         <p>He is a consummate professional and always went the extra mile.</p>
                         <p>Felix is gifted in understanding complex requirements and applying solutions for them.</p>
@@ -322,7 +334,7 @@
             </li>
             <li class="testimonials__item">
                 <figure>
-                    <blockquote cite="https://www.linkedin.com/in/felix-eve/#ember81">
+                    <blockquote cite="https://www.linkedin.com/in/felix-eve">
                         <p>Felix is one of those great developers who's also just a genuine pleasure to work with. He's got a real sense of craftsmanship and pride in his work, and it shows in the quality of what he delivers.</p>
                         <p>On a technical level he's capable of delivering an entire development project on his own, and was tasked with some of the most difficult projects that came through the studio where we worked together. Felix is always happy to take on a challenge and his curiosity drives him to go deep when he needs to learn something new.</p>
                         <p>He's really good at communicating where the risks and challenges in a project lie, and always keeps an open line of communication when unexpected challenges might cause delays in a project. He understands that behind every technical challenge there's a real person or a business with a problem that needs solving, and doesn't get distracted from delivering that outcome.</p>

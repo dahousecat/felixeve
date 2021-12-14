@@ -24,7 +24,7 @@ function css(cb) {
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer('last 2 versions')]))
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./www/src/css'));
+    .pipe(gulp.dest('./www/css'));
   cb();
 }
 
@@ -66,6 +66,7 @@ function moveFiles(cb) {
   gulp.src('./src/sw.js').pipe(gulp.dest('./www'));
   gulp.src('./src/manifest.json').pipe(gulp.dest('./www'));
   gulp.src('./src/fonts/*').pipe(gulp.dest('./www/fonts'));
+  gulp.src('./src/files/*').pipe(gulp.dest('./www/files'));
   cb();
 }
 
@@ -151,6 +152,7 @@ gulp.task('watch', function () {
   gulp.watch('./src/sass/**/*.scss', css);
   gulp.watch('./src/js/**/*.js', js);
   gulp.watch('./index.php', buildHtml);
+  gulp.watch('./cv.html', moveFiles);
 });
 
 exports.images = series(resizeFelixImage, squareFelixImage, resizePortfolioImage, moveIcons);
