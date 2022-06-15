@@ -52,8 +52,8 @@ function js(cb) {
  * Turn index.php into index.html.
  */
 function buildHtml(cb) {
-  gulp.src('./src/index.php')
-      .pipe(exec('php src/index.php > www/index.html'));
+  gulp.src('./src/index.php').pipe(exec('php src/index.php > build/index.html'));
+  gulp.src('./src/cv.html').pipe(gulp.dest('./build'));
   cb();
 }
 
@@ -61,7 +61,6 @@ function buildHtml(cb) {
  * Move files into www.
  */
 function moveFiles(cb) {
-  gulp.src('./src/cv.html').pipe(gulp.dest('./www'));
   gulp.src('./src/.htaccess').pipe(gulp.dest('./www'));
   gulp.src('./src/sw.js').pipe(gulp.dest('./www'));
   gulp.src('./src/manifest.json').pipe(gulp.dest('./www'));
@@ -74,7 +73,7 @@ function moveFiles(cb) {
  * Take main.css and put in inline in a <style> tag.
  */
 function inlineCss(cb) {
-  gulp.src('./www/index.html')
+  gulp.src('./build/index.html')
       .pipe(exec('./scripts/inline_css.sh'));
   cb();
 }
@@ -83,9 +82,17 @@ function inlineCss(cb) {
  * Minify HTML.
  */
 function minifyHtml(cb) {
-  gulp.src('./www/*.html')
+  gulp.src('./build/*.html')
       .pipe(htmlmin({ collapseWhitespace: true }))
       .pipe(gulp.dest('./www'));
+  cb();
+}
+
+/**
+ * Don't minify HTML, just move it to it's final destination.
+ */
+function moveHtml(cb) {
+  gulp.src('./build/*.html').pipe(gulp.dest('./www'));
   cb();
 }
 
@@ -160,6 +167,6 @@ exports.css = series(css);
 exports.prodCss = series(prodCss);
 exports.inlineCss = series(inlineCss);
 exports.js = series(js);
-exports.html = series(buildHtml, moveFiles);
+exports.html = series(buildHtml, moveFiles, moveHtml);
 exports.prod = series(buildHtml, moveFiles, js, prodCss, inlineCss, minifyHtml);
-exports.default = series(buildHtml, moveFiles, js, prodCss);
+exports.default = series(buildHtml, moveFiles, js, prodCss, moveHtml);
