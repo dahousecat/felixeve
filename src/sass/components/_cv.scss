@@ -66,6 +66,18 @@ a {
   }
 }
 
+p {
+  margin: 0 0 1rem 0;
+
+  @media print {
+    margin-bottom: .4rem;
+  }
+}
+
+ul {
+  padding-left: 1.6rem;
+}
+
 .top {
   background-color: rgb(70, 70, 70);
   padding: 1rem;
@@ -132,6 +144,7 @@ h1 {
   grid-row-start: 1;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: -0.3rem;
 
   @include mq($from: cv-s) {
     grid-column-end: 2;
@@ -139,7 +152,7 @@ h1 {
 
   @media print {
     font-size: 5rem;
-    margin: 0;
+    margin: 0 0 0 -0.1rem;
   }
 }
 
@@ -147,7 +160,7 @@ h2 {
   font-size: clamp(1.8rem, 5.8vw, 2.5rem);
   text-transform: uppercase;
   color: #666;
-  margin-top: 0;
+  margin-top: -1.4rem;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -159,9 +172,10 @@ h2 {
 
   @media print {
     font-size: 2rem;
-    margin: 0;
+    margin: -1.4rem 0 0 0;
     position: relative;
     top: -1rem;
+    color: #aaa !important;
   }
 }
 
@@ -173,12 +187,19 @@ h3 {
   color: #333;
   font-size: 1.6rem;
   margin-top: 3rem;
-  box-shadow: 0 1rem 1rem -1rem rgba(0,0,0,0.3);
+  box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, 0.3);
 
   @media print {
     font-size: 1.4rem;
-    margin-top: 1rem;
+    margin-top: 2rem;
+    margin-bottom: .7rem;
     box-shadow: none;
+  }
+
+  .job-experience & {
+    @media print {
+      margin-top: 1rem;
+    }
   }
 
   &.first {
@@ -195,7 +216,7 @@ h3::before {
 }
 
 h4 {
-  margin: 1.5rem 0 0.4rem 0;
+  margin: 0 0 0.4rem 0;
   text-transform: uppercase;
 
   @media print {
@@ -225,7 +246,7 @@ h4 {
 
   @media print {
     font-size: 1.3rem;
-    max-width: 36rem;
+    max-width: 44rem;
     position: relative;
     top: -1.2rem;
     margin-bottom: 0;
@@ -248,11 +269,12 @@ h4 {
 
   @media print {
     width: 12rem;
+    grid-column-start: 3;
   }
 }
 
 .felix {
-  box-shadow: 0.6rem 0.6rem 0.7rem -0.3rem rgba(0,0,0,0.3);
+  box-shadow: 0.6rem 0.6rem 0.7rem -0.3rem rgba(0, 0, 0, 0.3);
 
   @media print {
     box-shadow: none;
@@ -280,8 +302,11 @@ h4 {
   }
 
   @media print {
-    top: -1rem;
-    margin-bottom: -2rem;
+    position: static;
+    margin-top: 0;
+    margin-bottom: 0;
+    grid-row-start: 1;
+    padding-right: 2rem;
   }
 }
 
@@ -289,26 +314,17 @@ svg {
   height: 1.6rem;
 }
 
-p {
-  @media print {
-    margin: .4rem 0;
-  }
-
-  &.compact {
-    margin-top: 0;
-  }
-}
-
-ul {
-  padding-left: 1.6rem;
-}
-
-.job {
+.row.job {
   display: flex;
+  margin: 2rem 0;
 
   @media print {
     margin: .3rem 0;
   }
+}
+
+.job__company {
+  color: #777;
 }
 
 .job__role {
@@ -316,7 +332,7 @@ ul {
   font-style: italic;
 
   @media print {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
@@ -324,12 +340,15 @@ ul {
   font-size: 1.4rem;
 
   @media print {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
 
 .job__body {
   border-bottom: 0.2rem solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .job:last-child .job__body {
